@@ -45,9 +45,9 @@ El workflow `.github/workflows/contract-tests.yml` ejecuta typecheck, consumidor
 
 - Repositorio público: `https://github.com/ZaqueoChivalan/-S9-Contrato-consumidor-proveedor-con-Pact`
 - Ejecución exitosa de GitHub Actions: `https://github.com/ZaqueoChivalan/-S9-Contrato-consumidor-proveedor-con-Pact/actions/runs/35482450795`
-- Video de máximo 3 minutos: `https://REEMPLAZAR_ENLACE_DEL_VIDEO`
+- Video de máximo 3 minutos: `https://drive.google.com/file/d/15PqFFNDDEeJYe82dScSbv6Sf5-XcHKnD/view?usp=sharing`
 
-El enlace del video debe sustituirse después de grabar la demostración.
+El video presenta la frontera consumidor-proveedor, la generación del Pact, los estados del proveedor y la ejecución de las pruebas.
 
 ## Uso de inteligencia artificial
 
