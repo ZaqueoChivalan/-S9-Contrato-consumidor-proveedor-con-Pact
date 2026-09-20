@@ -25,14 +25,7 @@ def P(text, style="Body2"):
     return Paragraph(text, styles[style])
 
 def footer(canvas, doc):
-    canvas.saveState()
-    canvas.setStrokeColor(colors.HexColor("#D7E2E8"))
-    canvas.line(18*mm, 13*mm, 192*mm, 13*mm)
-    canvas.setFont("Helvetica", 8)
-    canvas.setFillColor(colors.HexColor("#6B7F8C"))
-    canvas.drawString(18*mm, 8*mm, "Contrato consumidor-proveedor - PactV3")
-    canvas.drawRightString(192*mm, 8*mm, f"Página {doc.page}")
-    canvas.restoreState()
+    return
 
 story = []
 story += [Spacer(1, 22*mm), P("Compatibilidad entre consumidor y proveedor", "CoverTitle"), P("Servicio de reservaciones e inventario con PactV3 y Vitest", "CoverSub")]
