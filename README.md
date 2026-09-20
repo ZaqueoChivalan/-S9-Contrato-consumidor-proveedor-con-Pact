@@ -44,7 +44,7 @@ El workflow `.github/workflows/contract-tests.yml` ejecuta typecheck, consumidor
 ## Evidencia y entrega
 
 - Repositorio público: `https://github.com/ZaqueoChivalan/-S9-Contrato-consumidor-proveedor-con-Pact`
-- Ejecución de GitHub Actions: `https://github.com/ZaqueoChivalan/-S9-Contrato-consumidor-proveedor-con-Pact/actions`
+- Ejecución exitosa de GitHub Actions: `https://github.com/ZaqueoChivalan/-S9-Contrato-consumidor-proveedor-con-Pact/actions/runs/35482450795`
 - Video de máximo 3 minutos: `https://REEMPLAZAR_ENLACE_DEL_VIDEO`
 
 El enlace del video debe sustituirse después de grabar la demostración.
