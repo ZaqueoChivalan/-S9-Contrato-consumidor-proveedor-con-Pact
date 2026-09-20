@@ -1,0 +1,187 @@
+{
+  "consumer": {
+    "name": "reservation-consumer"
+  },
+  "interactions": [
+    {
+      "description": "a request for an unknown SKU",
+      "providerStates": [
+        {
+          "name": "SKU does not exist in inventory"
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "path": "/inventory/SKU-MISSING"
+      },
+      "response": {
+        "body": {
+          "error": "SKU not found",
+          "sku": "SKU-MISSING"
+        },
+        "headers": {
+          "Content-Type": "application/json",
+          "content-type": "application/json"
+        },
+        "matchingRules": {
+          "body": {
+            "$.error": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ]
+            },
+            "$.sku": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ]
+            }
+          }
+        },
+        "status": 404
+      }
+    },
+    {
+      "description": "a request for available inventory",
+      "providerStates": [
+        {
+          "name": "inventory has stock for SKU"
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "path": "/inventory/SKU-AVAILABLE"
+      },
+      "response": {
+        "body": {
+          "available": true,
+          "name": "Conference room A",
+          "quantity": 7,
+          "sku": "SKU-AVAILABLE"
+        },
+        "headers": {
+          "Content-Type": "application/json",
+          "content-type": "application/json"
+        },
+        "matchingRules": {
+          "body": {
+            "$.available": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ]
+            },
+            "$.name": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ]
+            },
+            "$.quantity": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "integer"
+                }
+              ]
+            },
+            "$.sku": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ]
+            }
+          }
+        },
+        "status": 200
+      }
+    },
+    {
+      "description": "a request for out of stock inventory",
+      "providerStates": [
+        {
+          "name": "inventory has no stock for SKU"
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "path": "/inventory/SKU-OUT"
+      },
+      "response": {
+        "body": {
+          "available": false,
+          "name": "Conference room B",
+          "quantity": 0,
+          "sku": "SKU-OUT"
+        },
+        "headers": {
+          "Content-Type": "application/json",
+          "content-type": "application/json"
+        },
+        "matchingRules": {
+          "body": {
+            "$.available": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ]
+            },
+            "$.name": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ]
+            },
+            "$.quantity": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "integer"
+                }
+              ]
+            },
+            "$.sku": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ]
+            }
+          }
+        },
+        "status": 200
+      }
+    }
+  ],
+  "metadata": {
+    "pact-js": {
+      "version": "15.0.1"
+    },
+    "pactRust": {
+      "ffi": "0.4.28",
+      "models": "1.3.5"
+    },
+    "pactSpecification": {
+      "version": "3.0.0"
+    }
+  },
+  "provider": {
+    "name": "inventory-provider"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "pact-inventory-contract-testing",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Consumer-provider contract testing with PactV3 and Vitest",
+  "type": "module",
+  "scripts": {
+    "test:consumer": "vitest run consumer/tests",
+    "test:provider": "vitest run provider/tests",
+    "test": "npm run test:consumer && npm run test:provider",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc",
+    "start:provider": "tsx provider/src/server.ts",
+    "verify": "npm test"
+  },
+  "dependencies": {
+    "@pact-foundation/pact": "^15.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}
